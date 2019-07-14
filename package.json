@@ -1,0 +1,23 @@
+{
+  "name": "hitzone",
+  "version": "1.0.0",
+  "description": "web application for residences in the HITZONE company",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CantunB/hitzone-nodejs-mysql.git"
+  },
+  "keywords": [
+    "app",
+    "msyql"
+  ],
+  "author": "Bernabe Cantun,Jesus Arturo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CantunB/hitzone-nodejs-mysql/issues"
+  },
+  "homepage": "https://github.com/CantunB/hitzone-nodejs-mysql#readme"
+}
