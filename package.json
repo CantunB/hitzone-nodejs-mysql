@@ -4,7 +4,7 @@
   "description": "web application for residences in the HITZONE company",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,15 @@
   "bugs": {
     "url": "https://github.com/CantunB/hitzone-nodejs-mysql/issues"
   },
-  "homepage": "https://github.com/CantunB/hitzone-nodejs-mysql#readme"
+  "homepage": "https://github.com/CantunB/hitzone-nodejs-mysql#readme",
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-myconnection": "^1.0.4",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
 }
