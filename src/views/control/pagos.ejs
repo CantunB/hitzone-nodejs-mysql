@@ -1,0 +1,116 @@
+<% include ../partials/_header  %>
+<br>
+<div class="form row">
+        <div class="col">
+    <h2 class="container text-warning ">Pagos</h2>
+        </div>
+        <div class="col">
+     <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+    </div>
+</div>
+<br>
+<div class="container mt-lg-auto">
+        <form action="/control/create/add" method="POST">
+                        <div class="card">
+                                <div class="card-header"><strong>Datos Personales</strong></div>
+                        <div class="row mt-auto">
+                                <div class="col-md-4">
+                                        <input type="text" name="name"  value="" class="form-control" readonly>
+                                        <p class="text-light bg-dark ">Nombre</p>
+                            </div>
+                            <div class="col-md-4">
+                                    <input type="text" name="paterno"   value="" class="form-control" readonly>
+                                    <p class="text-light bg-dark ">Apellido Paterno</p>
+                            </div>
+                            <div class="col-md-4">
+                                    <input type="text" name="materno"   value="" class="form-control" readonly>
+                                    <p class="text-light bg-dark ">Apellido Materno</p>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                    <!--  <label for="inputState">Tiempo</label> -->
+                                   <!--  <input type="text" class="form-control" name="date" placeholder="<%=moment().locale('es').format('MMMM Do YYYY, h:mm:ss a'); %>"  value="<%=moment().locale('es').format('MMMM Do YYYY, h:mm:ss a'); %>"readonly> -->
+                                    <input type="text" class="form-control" name="date" placeholder="<%=moment().format('L'); %>"readonly>
+                                     <p class="text-light bg-dark ">Fecha de Inicio</p>
+                             </div>
+                             <div class="form-group col-md-2">
+                                    <!--  <label for="inputState">Tiempo</label> -->
+                                     <select name="days"  id="days" class="form-control">
+                                       <option selected >Dias</option>
+                                     </select>
+                                     <p class="text-light bg-dark ">Dias</p>
+                             </div>
+                            <div class="form-group col-md-2">
+                                   <!--  <label for="inputState">Tiempo</label> -->
+                                    <select name="time"  id="time" class="form-control">
+                                      <option selected >Tiempo</option>
+                                    </select>
+                                    <p class="text-light bg-dark ">Tiempo</p>
+                            </div>
+                            <div class="form-group col-md-4 dropdown-item disabled" >
+                                    <!--  <label for="inputState">Tiempo</label> -->
+                                     <select name="pay"  id="pay" class="form-control" readonly>
+                                       <option selected ></option>
+                                     </select>
+                                     <p class="text-light bg-dark ">Tiempo</p>
+                                     
+                             </div>
+                        </div>
+                        </div>
+                        <button type="submit" class="btn btn-success ">Guardar</button>
+                    </form>
+</div>
+<script type="text/javascript">
+     var days = ['3', '5'];
+    var option2 = '';
+    
+    for (var i = 0; i < days.length; i++){
+       option2 += '<option value="'+ days[i] + '">' + days[i] + '</option>';
+    }
+    $('#country').append(option2);
+    
+    var teams = {
+        '3': ['Colo-Colo el Más Grande', 'La U', 'Católica'],
+        '5': ['Real Madrid', 'Barcelona', 'Atlético Madrid']
+    }
+    
+    var $teams = $('#teams');
+    $('#country').change(function () {
+        var country = $(this).val(), team = teams[country] || [];
+
+        var html = $.map(team, function(t){
+            return '<option value="' + t + '">' + t + '</option>'
+        }).join('');
+        $teams.html(html)
+    });
+
+
+
+    var Months = ['1 mes', '2 meses', '3 meses', '6 meses', '12 meses'];
+    var option = '';
+
+    for (var i = 0; i < Months.length; i++){
+       option += '<option value="'+ Months[i] + '">' + Months[i] + '</option>';
+    }
+    $('#time').append(option);
+    
+    var pay = {
+       //'1': ['Colo-Colo el Más Grande', 'La U', 'Católica'],
+        '1 mes': ['<%=moment().locale('es').add(1, 'M').calendar(); %>'],
+        '2 meses': ['<%=moment().locale('es').add(2, 'M').calendar(); %>'],
+        '3 meses': ['<%=moment().locale('es').add(3, 'M').calendar(); %>'],
+        '6 meses': ['<%=moment().locale('es').add(6, 'M').calendar(); %>'],
+        '12 meses': ['<%=moment().locale('es').add(12, 'M').calendar(); %>']
+    }
+    
+    var $pay = $('#pay');
+    $('#time').change(function () {
+        var time = $(this).val(), team = pay[time] || [];
+
+        var html = $.map(team, function(t){
+            return '<option value="' + t + '">' + t + '</option>'
+        }).join('');
+        $pay.html(html)
+    });
+  </script>
+<% include ../partials/_footer %>

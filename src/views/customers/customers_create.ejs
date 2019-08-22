@@ -1,0 +1,120 @@
+<% include ../partials/_header  %>
+<br>
+
+
+<div class="form-row align-items-center">
+                <h1 class="container text-warning">Ficha de inscripcion </h1>   
+                                <span class="btn btn-primary mb-2" name="text"> <%=moment().format('L') %></span> 
+                               <!--  <span class="btn btn-primary mb-2" name="text"> <%=moment().day(36)  %></span> -->
+                              
+</div>
+<!-- <div class="form-row align-items-center">
+                <span class="btn btn-primary mb-2" name="text">
+                                <%=moment().locale('es').add(1, 'M').calendar(); %>
+                                </span>
+</div> -->
+
+<div class="container ">
+        <form action="/customers/create/add" method="POST">
+        <div class="card">
+            <div class="card-header"><strong>Datos Personales</strong></div>
+            <div class="row mt-auto">
+                        
+                         <div class="col-md-4">
+                                    <input type="text" name="name"  class="form-control">
+                                    <p class="text-light bg-dark ">Nombre</p>
+                        </div>
+                        <div class="col-md-4">
+                                <input type="text" name="paterno"  class="form-control">
+                                <p class="text-light bg-dark ">Apellido Paterno</p>
+                        </div>
+                        <div class="col-md-4">
+                                <input type="text" name="materno"  class="form-control">
+                                <p class="text-light bg-dark ">Apellido Materno</p>
+                        </div>
+
+                     <div class="col-md-2">
+                                <input type="text" name="edad"  class="form-control">
+                                <p class="text-light bg-dark ">Edad</p>
+                        </div>
+                    <div class="col-md-2">
+                                <input type="date" name="bdate"  class="form-control">
+                                <p class="text-light bg-dark ">Fecha de Nacimiento</p>
+                        </div>
+                    <div class="col-md-4">
+                                <input type="text" name="sexo"  class="form-control">
+                                <p class="text-light bg-dark ">Genero</p>
+                    </div>
+                        <div class="col-md-4">
+                                <input type="text" name="nac"  class="form-control">
+                        <p class="text-light bg-dark">Nacionalidad</p>
+                        </div>
+            </div>
+        </div>
+
+        <br>
+
+            
+        <div class="card">
+            <div class="card-header"><strong>Contacto</strong></div>
+                <div class="row mt-auto">
+                        <div class="col-md-6">
+                                <input type="email" name="email"  class="form-control">
+                                <p class="text-light bg-dark ">Correo electronico</p>
+                        </div>
+                        <div class="col-md-6">
+                                <input type="text" name="phone"  class="form-control">
+                                <p class="text-light bg-dark ">Telefono/Celular</p>
+                        </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="card">
+                <div class="card-header"><strong>Contacto en caso de emergencia</strong></div>
+                    <div class="row mt-auto">
+                            <div class="col-md-4">
+                                    <input type="text" name="e_name"  class="form-control">
+                                    <p class="text-light bg-dark ">Nombre</p>
+                                                            </div>
+                        <div class="col-md-4">
+                                <input type="text" name="e_rel"  class="form-control">
+                                <p class="text-light bg-dark ">Relacion</p>
+                        </div>
+                        <div class="col-md-4">
+                                <input type="text" name="e_phone"  class="form-control">
+                                <p class="text-light bg-dark ">Telefono</p>
+                        </div>
+                        <div class="col-md-4">
+                                <input type="text" name="c_name"  class="form-control">
+                                <p class="text-light bg-dark ">Nombre</p>
+                    </div>
+                    <div class="col-md-4">
+                            <input type="text" name="c_rel"  class="form-control">
+                            <p class="text-light bg-dark ">Relacion</p>
+                    </div>
+                    <div class="col-md-4">
+                            <input type="text" name="c_phone"  class="form-control">
+                            <p class="text-light bg-dark ">Telefono</p>
+                    </div>
+                    </div>
+        </div>
+<br>
+        <div class="card">
+                <div class="card-header"><strong>Padecimientos/Enfermedades/Alergias</strong></div>
+                <input type="text" name="other"  class="form-control">
+                <!-- <div class="invisible">
+                                <input  class="invisible" type="text" name="date" value="<%=moment().format("MMM Do YY") %>"  class="form-control">
+                        </div> -->
+            </div> 
+<br>
+ 
+    <a  href="/customers" class="btn btn-danger ">Cancelar</a>
+          <button type="submit" class="btn btn-success ">Guardar</button>
+</form>
+    </div>
+    </div>
+    </div>
+
+<% include ../partials/_footer  %>

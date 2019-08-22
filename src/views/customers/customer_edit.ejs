@@ -1,0 +1,106 @@
+<% include ../partials/_header  %>
+<br>
+<h1 class="container text-warning">Actualizar Informacion de  <%=data.name + data.paterno%> </h1>
+<div class="container mt-5">
+    <div class="row">
+                    <form action="/customers/update/<%= data.id%>" method="POST">
+                    <div class="card">
+                            <div class="card-header"><strong>Datos Personales</strong></div>
+                            <div class="row mt-auto">
+                                         <div class="col-md-4">
+                                                    <input type="text" name="name"  value="<%= data.name %>" class="form-control">
+                                                    <p class="text-light bg-dark ">Nombre</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                                <input type="text" name="paterno"   value="<%= data.paterno%>" class="form-control">
+                                                <p class="text-light bg-dark ">Apellido Paterno</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                                <input type="text" name="materno"   value="<%= data.materno%>" class="form-control">
+                                                <p class="text-light bg-dark ">Apellido Materno</p>
+                                        </div>
+                
+                                     <div class="col-md-2">
+                                                <input type="text" name="edad"   value="<%= data.edad%>" class="form-control">
+                                                <p class="text-light bg-dark ">Edad</p>
+                                        </div>
+                                    <div class="col-md-2">
+                                                <input type="date" name="bdate"  value="<%= data.bdate%>"  class="form-control">
+                                                <p class="text-light bg-dark ">Fecha de Nacimiento</p>
+                                        </div>
+                                    <div class="col-md-4">
+                                                <input type="text" name="sexo"   value="<%= data.sexo%>" class="form-control">
+                                                <p class="text-light bg-dark ">Genero</p>
+                                    </div>
+                                        <div class="col-md-4">
+                                                <input type="text" name="nac"   value="<%= data.nac%>" class="form-control">
+                                                <p class="text-light bg-dark">Nacionalidad</p>
+                                        </div>
+                            </div>
+                        </div>
+                
+                        <br>
+                
+                            
+                        <div class="card">
+                            <div class="card-header"><strong>Contacto</strong></div>
+                                <div class="row mt-auto">
+                                        <div class="col-md-6">
+                                                <input type="email" name="email"   value="<%= data.email%>" class="form-control">
+                                                <p class="text-light bg-dark ">Correo electronico</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <input type="text" name="phone"  value="<%= data.phone%>"  class="form-control">
+                                                <p class="text-light bg-dark ">Telefono/Celular</p>
+                                        </div>
+                            </div>
+                        </div>
+                
+                        <br>
+                
+                        <div class="card">
+                                <div class="card-header"><strong>Contacto en caso de emergencia</strong></div>
+                                    <div class="row mt-auto">
+                                            <div class="col-md-4">
+                                                    <input type="text" name="e_name"   value="<%= data.e_name%>" class="form-control">
+                                                    <p class="text-light bg-dark ">Nombre</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                                <input type="text" name="e_rel"  value="<%= data.e_rel%>"  class="form-control">
+                                                 <p class="text-light bg-dark ">Relacion</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                                <input type="text" name="e_phone"   value="<%= data.e_phone%>" class="form-control">
+                                                 <p class="text-light bg-dark ">Telefono</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                                <input type="text" name="c_name"   value="<%= data.c_name%>" class="form-control">
+                                                <p class="text-light bg-dark ">Nombre</p>
+                                                
+                                    </div>
+                                    <div class="col-md-4">
+                                            <input type="text" name="c_rel"   value="<%= data.c_rel%>" class="form-control">
+                                           <p class="text-light bg-dark ">Relacion</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                            <input type="text" name="c_phone"  value="<%= data.c_phone%>"  class="form-control">
+                                            <p class="text-light bg-dark ">Telefono</p>
+                                    </div>
+                                    </div>
+                        </div>
+                <br>
+                        <div class="card">
+                                <div class="card-header"><strong>Padecimientos/Enfermedades/Alergias</strong></div>
+                                <input type="text" name="other"   value="<%= data.other%>" class="form-control">
+                            </div> 
+                <br>
+
+                      <button type="submit" class="btn btn-warning">Actualizar</button>
+                      <a  href="/customers" class="btn btn-danger ">Cancelar</a>
+                       </form>
+                    
+            </div>
+        </div>
+    </div>
+</div>
+<% include ../partials/_footer  %>

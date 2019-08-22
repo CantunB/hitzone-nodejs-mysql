@@ -1,0 +1,46 @@
+<% include ../partials/_header  %>
+  <h1 class="container">Clientes HIT ZONE    <a href="/customers/create" class="btn btn-outline-success">Nuevo</a></h1>
+  <div class="container">
+    <div class=" row mt-auto">
+      <div class="col">
+        <table class="table table">
+          <thead class="thead-dark">
+            <tr>
+              <th>N°</th>
+              <th>Nombre</th>
+              <th>Ap.Paterno</th>
+              <th>Ap.Materno</th>
+              <th>Edad</th>
+              <th>Genero</th>
+              <th>Correo</th>
+              <th>Telefono</th>
+              <th class="col-md-7 center"> Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%if (data){ %>
+                <% for (var i=0; i <data.length; i++){ %>
+                  <tr>
+                    <td><%=(i+1)%></td>
+                    <td><%=data[i].name%></td>
+                    <td><%=data[i].paterno%></td>
+                    <td><%=data[i].materno%></td>
+                    <td><%=data[i].edad%></td>
+                    <td><%=data[i].sexo%></td>
+                    <td><%=data[i].email%></td>
+                    <td><%=data[i].phone%></td>
+                    <td  class="col-md-6">
+                      <a href="/customers/delete/<%= data[i].id %>" class="btn btn-outline-danger">Eliminar</a>
+                      <a href="/customers/update/<%= data[i].id %>" class="btn btn-outline-warning">Actualizar</a>
+                      <a href="view/<%= data[i].id %>" class="btn btn-outline-primary">Info</a>
+                    </td>
+                  </tr>
+               <% } %>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    
+    </div>
+  </div>
+<% include ../partials/_footer %>
